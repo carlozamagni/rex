@@ -21,6 +21,6 @@ class Auth_model extends CI_Model {
          // person has account with us
          return $q->row();
       }
-      return false;
+      return false;  // if($a === NULL)  php treats NULL, false, 0, and the empty string as equal.  (0_0)
    }
 }
