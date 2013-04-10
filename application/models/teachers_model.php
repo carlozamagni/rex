@@ -37,7 +37,8 @@ class Teachers_model extends CI_Model {
             ->get('docenti');
 
 		if ( $q->num_rows > 0 ) {
-        	return $q->row();  //return  row mapped to "domain object"
+            //return  row mapped to "domain object"
+        	return $q->row();
       	}
 
     	return false; // return null
