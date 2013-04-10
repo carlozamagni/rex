@@ -1,12 +1,26 @@
 <?php
 class Student_model extends CI_Model {
 
+    var $id = 0;
+    var $nome = '';
+    var $cognome = '';
+
 	function __construct()
     {
         // Call the Model constructor
         parent::__construct();
         
         $this->load->database();
+    }
+
+    function save()
+    {
+        $data = array(
+            'nome' => $this->nome ,
+            'cognome' => $this->cognome
+        );
+
+        $this->db->insert('studenti', $data); 
     }
     
     function load_students()

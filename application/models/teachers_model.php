@@ -1,6 +1,10 @@
 <?php
 class Teachers_model extends CI_Model {
 
+    var $id = 0;
+    var $nome = '';
+    var $cognome = '';
+
 	function __construct()
     {
         // Call the Model constructor
@@ -9,6 +13,16 @@ class Teachers_model extends CI_Model {
         $this->load->database();
     }
     
+    function save()
+    {
+        $data = array(
+            'nome' => $this->nome ,
+            'cognome' => $this->cognome
+        );
+
+        $this->db->insert('docenti', $data); 
+    }
+
     function load_teachers()
     {
     	return 'teachers model called: returning teachers list';
